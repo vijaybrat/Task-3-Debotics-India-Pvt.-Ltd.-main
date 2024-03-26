@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  
+    
+      
+        <div id="container">
+            <div id="user-content">
+                <div id="tabbed">
+    
+                    <ul class="tabs">
+                        <li class="tab"><label for="tab1" id="text-label"><i class="fa fa-message"></i></label></li>
+                        <li class="tab"><label for="tab2" id="url-label"><i class="fa fa-link"></i></label></li>
+                    </ul>
+    
+                    <div class="tab-content" id="text">
+                        <label for="">Enter Plain Text</label><br>
+                        <input type="text" placeholder="e.g.- Hey, Tejasv here!" id="text-input" required>
+                        <center><button class="btn" id="text-btn">Generate QR Code</button></center>
+                    </div>
+    
+                    <div class="tab-content" id="url">
+                        <label for="">Enter URL</label><br>
+                        <input type="text" value="https://" id="url-input" required>
+                        <center><button class="btn" id="url-btn" onclick="validate()">Generate QR Code</button></center>
+                    </div>
+
+                </div>
+            </div>
+            
+    
+            <div id="qr-content">
+                <h3>Scan this QR Code</h3>
+                <span class="loader"></span>
+                <section id="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Hey, Adam here!" id="qr-Image" alt="">
+                </section>
+               <i class="fa fa-download" id="download-btn"></i>
+                <div id="list">
+                    <label for="">Download format: </label>
+                    <select name="" id="format-list">
+                        <option value="png">PNG</option>
+                        <option value="jpg">JPG</option>
+                    </select>
+                </div>
+            </div>
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
